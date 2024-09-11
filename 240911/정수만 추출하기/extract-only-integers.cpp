@@ -9,14 +9,14 @@ int main() {
 
     int aIdx = 0;
     for(int i = 0; i < a.length(); i++){
-        if (a[i] < '0' && a[i] > '9')
+        if (a[i] < '0' || a[i] > '9')
             break;
         aIdx++;
     }
     
     int bIdx = 0;
-    for(int i = 0; i < a.length(); i++){
-        if (a[i] < '0' && a[i] > '9')
+    for(int i = 0; i < b.length(); i++){
+        if (b[i] < '0' || b[i] > '9')
             break;
         bIdx++;
     }
