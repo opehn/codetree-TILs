@@ -3,7 +3,7 @@ using namespace std;
 
 #define STRING_LENGTH 5
 int main() {
-    string arrStr[STRING_LENGTH] = {"apple", "banana", "grape", "bluberry", "orange"};
+    string arrStr[STRING_LENGTH] = {"apple", "banana", "grape", "blueberry", "orange"};
 
     char toFind;
     cin >> toFind;
