@@ -28,8 +28,8 @@ int main() {
             cout << endl;
             sumLength = 0;
  
-            int lastIdx = arrStr[i].length() - 1;
-            arrStr[i] = arrStr[i].substr(j, lastIdx);
+            int length = arrStr[i].length() - j;
+            arrStr[i] = arrStr[i].substr(j, length);
             i--;
         }
 
