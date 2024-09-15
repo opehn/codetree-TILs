@@ -13,7 +13,7 @@ int main() {
     }
 
     sort(a.begin(), a.end());
-    sort(a.begin(), a.end());
+    sort(b.begin(), b.end());
 
     for(int i = 0; i < a.length(); i++){
         if (a[i] != b[i]) {
