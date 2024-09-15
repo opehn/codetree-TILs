@@ -25,14 +25,13 @@ int main() {
     }
 
     int cnt = 0;
-    sort(strs, strs + n);
+    string words[n];
     for(int i = 0; i < n; i++){
-        if(checkStartWith(t, strs[i]))
-            cnt++;
-        if(cnt == k) {
-            cout << strs[i];
-            return 0;
+        if(checkStartWith(t, strs[i])){
+            words[cnt++] = strs[i];        
         }
     }
+    sort(words, words + cnt);
+    cout << words[k -1];
     return 0;
 }
