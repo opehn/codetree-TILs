@@ -6,18 +6,19 @@ int main() {
     int n;
     cin >> n;
 
-    int arr[n] = {};
-    for(int i = 0; i < n; i++){
+    int length = n * 2;
+    int arr[length] = {};
+    for(int i = 0; i < length; i++){
         cin >> arr[i];
     }
 
-    sort(arr, arr + n);
+    sort(arr, arr + length);
 
-    int length = n % 2 == 0? n / 2 : n / 2 + 1;
     int max = 0;
     int cur = 0;
-    for(int i = 0; i < length; i++){
-        cur = arr[i] + arr[n - i - 1];
+
+    for(int i = 0; i < length / 2; i++){
+        cur = arr[i] + arr[length - i - 1];
         max = cur > max ? cur : max;
     }
     cout << max;
