@@ -2,7 +2,9 @@
 #include <algorithm>
 using namespace std;
 
-bool checkStartBy(string t, string cur){
+bool checkStartWith(string t, string cur){
+    if(t.length() > cur.length())
+        return false;
     for(int i = 0; i < t.length(); i++) {
         if(t[i] != cur[i]) {
             return false;
@@ -25,7 +27,7 @@ int main() {
     int cnt = 0;
     sort(strs, strs + n);
     for(int i = 0; i < n; i++){
-        if(checkStartBy(t, strs[i]))
+        if(checkStartWith(t, strs[i]))
             cnt++;
         if(cnt == k) {
             cout << strs[i];
