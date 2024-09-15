@@ -6,6 +6,12 @@ int main() {
     string a, b;    
 
     cin >> a >> b;
+
+    if(a.length() != b.length()) {
+        cout << "No";
+        return 0;
+    }
+
     sort(a.begin(), a.end());
     sort(a.begin(), a.end());
 
