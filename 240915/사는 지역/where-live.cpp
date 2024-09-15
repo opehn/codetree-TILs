@@ -18,8 +18,8 @@ int main() {
     }
     
     tie(name, address, location) = userInfos[maxIndex];
-    cout << " name " << name << endl;
-    cout << " addr " << address << endl;    
-    cout << " city " << location << endl;
+    cout << "name " << name << endl;
+    cout << "addr " << address << endl;    
+    cout << "city " << location << endl;
     return 0;
 }
