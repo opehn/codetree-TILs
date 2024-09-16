@@ -35,7 +35,9 @@ int main() {
     }
 
     sort(persons, persons + MAX_PERSON, cmpByName);
-
+    
+    cout << fixed;
+    cout.precision(1);
     cout << "name" << endl;
     for(int i = 0; i < MAX_PERSON; i++){
         tie(name, height, weight) = persons[i];
