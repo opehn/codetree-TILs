@@ -23,7 +23,7 @@ int main() {
 
     for(int i = 0; i < n; i++){
         cin >> height >> weight;
-        students[i] = make_tuple(height, -weight, i + 1);
+        students[i] = make_tuple(height, weight, i + 1);
     }
 
     sort(students, students + n, cmp);
@@ -31,7 +31,7 @@ int main() {
     int num;
     for(int i = 0; i < n; i++){
         tie(height, weight, num) = students[i];
-        cout << height << " " << -weight << " " << num << endl;
+        cout << height << " " << weight << " " << num << endl;
     }
     return 0;
 }
