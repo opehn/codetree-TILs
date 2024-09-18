@@ -13,7 +13,6 @@ int main() {
     }
 
     vector<int> changeBase;
-
     while(digit){
         changeBase.push_back(digit % base2);
         digit /= base2;
