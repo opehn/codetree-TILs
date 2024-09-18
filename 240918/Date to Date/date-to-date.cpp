@@ -20,6 +20,7 @@ int main() {
     int dayPassed1 = getDayPassed(m1, d1);
     int dayPassed2 = getDayPassed(m2, d2);
 
-    cout << dayPassed2 - dayPassed1 << endl;
+    
+    cout << (dayPassed1 == dayPassed2 ? 1 : dayPassed2 - dayPassed1) << endl;
     return 0;
 }
