@@ -1,53 +1,43 @@
 #include <iostream>
+#include <vector>
 using namespace std;
 
-#define MAX_LENGTH 10
+#define MAX_R 2000
+#define OFFSET 1000
+
 int main() {
     int n;
     cin >> n;
 
-    int line[MAX_LENGTH * 4] = {};
+    vector<int> line(MAX_R + 1, 0);
     int num;
     string command;
-    int start, end, cur;
-    int flag = 0;
+    int start, end;
+    int cur = OFFSET; 
+
     for(int i = 0; i < n; i++){
         cin >> num >> command;
 
-        if (!flag){
-            start = MAX_LENGTH * 2 - 1;
-        } else {
-            start = cur;
-        }
+        start = cur;
         if (command == "R") {
             end = start + num;
-            for(int i = start; i <= end; i++){
-                line[i]++;
-                cur = i;
+            for(int j = start; j < end; j++){ 
+                line[j]++;
             }
-
-        } else {
+            cur = end;  
+        } else { 
             end = start - num;
-            for(int i = start; i >= end; i--){
-                line[i]++;
-                cur = i;
+            for(int j = start - 1; j >= end; j--){  
+                line[j]++;
             }            
-
+            cur = end; 
         }
-
-        flag = 1;
     }
 
     int cnt = 0;
-    int curStart, curEnd;
-    for(int i = 0; i < MAX_LENGTH * 4; i++){
+    for(int i = 0; i <= MAX_R; i++){  
         if(line[i] >= 2) {
-            curStart = i;
-            while(line[i] >= 2){
-                 i++;
-            }
-            curEnd = i;
-            cnt += curEnd - curStart - 1;
+            cnt++;
         }
     }
     cout << cnt << endl;
