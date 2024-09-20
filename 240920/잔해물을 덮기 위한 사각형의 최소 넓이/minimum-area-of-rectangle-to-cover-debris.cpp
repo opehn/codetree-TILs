@@ -15,14 +15,11 @@ int main() {
         x2 += OFFSET;
         y2 += OFFSET;
 
-        cout << x1 << " " << y1 << " " << x2 << " " << y2 << endl;
         for(int i = x1; i < x2; i++){
             for(int j = y1; j < y2; j++){
                 if (n == 0) {
                     grid[i][j] = 1;
-                    cout  << "i: " << i << " j: " << j << endl;
-                } else {
-                cout  << "===i: " << i << " j: " << j << endl;                    
+                } else {                 
                     grid[i][j] = 0;
                 }
             }
@@ -33,13 +30,17 @@ int main() {
     for(int i = 0; i < GRID_SIZE; i++){
         for(int j = 0; j < GRID_SIZE; j++) {
             if (grid[i][j] == 1){
-
                 minX = i < minX ? i : minX;
                 maxX = i > maxX ? i : maxX;
                 minY = j < minY ? j : minY;
                 maxY = j > maxY ? j : maxY;
             }
         }
+    }
+
+    if (minX == GRID_SIZE || minY == GRID_SIZE) {
+        cout << 0 << endl;
+        return 0;
     }
     cout << ((maxX - minX + 1) * (maxY - minY + 1)) << endl;
     return 0;
