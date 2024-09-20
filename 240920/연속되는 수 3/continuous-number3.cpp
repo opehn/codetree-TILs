@@ -1,8 +1,13 @@
 #include <iostream>
 using namespace std;
 
-bool isMinus(int num){
-    return num < 0;
+int isMinus(int num){
+    if (num == 0)
+        return 0;
+    if (num < 0)
+        return 1;
+    if (num > 0)
+        return -1;
 }
 
 int main() {
