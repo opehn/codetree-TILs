@@ -21,8 +21,8 @@ int main() {
         maxX = x1 > x2 ? x1 : x2;
         minY = y1 < y2 ? y1 : y2;
         minY = y1 > y2 ? y1 : y2;
-        for(int i = x1; i < x2; i++ ) {
-            for(int j = y1; j < y2; j++){
+        for(int i = minX; i < maxX; i++ ) {
+            for(int j = minY; j < maxY; j++){
                 grid[i][j] = 1;
             }
         }
