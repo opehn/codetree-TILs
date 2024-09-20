@@ -18,7 +18,8 @@ int main() {
             cnt = 0;
         }
         prev = cur;
-    }    
+    }
+    max = cnt > max ? cnt : max;     
     cout << max + 1 << endl;
     return 0;
 }
