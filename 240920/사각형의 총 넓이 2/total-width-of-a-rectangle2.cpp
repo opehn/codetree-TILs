@@ -20,7 +20,7 @@ int main() {
         minX = x1 < x2 ? x1 : x2;
         maxX = x1 > x2 ? x1 : x2;
         minY = y1 < y2 ? y1 : y2;
-        minY = y1 > y2 ? y1 : y2;
+        maxY = y1 > y2 ? y1 : y2;
         for(int i = minX; i < maxX; i++ ) {
             for(int j = minY; j < maxY; j++){
                 grid[i][j] = 1;
