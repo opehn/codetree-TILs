@@ -7,7 +7,7 @@ int main() {
 
     int cur;
     int prev = 0;
-    int cnt = 0;
+    int cnt = 1;
     int max = 0;
     for(int i = 0; i < n; i++){
         cin >> cur;
@@ -15,11 +15,11 @@ int main() {
             cnt++;
         } else {
             max = cnt > max ? cnt : max; 
-            cnt = 0;
+            cnt = 1;
         }
         prev = cur;
     }
     max = cnt > max ? cnt : max;     
-    cout << max + 1 << endl;
+    cout << max << endl;
     return 0;
 }
