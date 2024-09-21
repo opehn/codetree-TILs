@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-#define MAX_TIME 50000 + 1
+#define MAX_TIME 1000000 + 1
 int main() {
     int n, m;
     cin >> n >> m;
