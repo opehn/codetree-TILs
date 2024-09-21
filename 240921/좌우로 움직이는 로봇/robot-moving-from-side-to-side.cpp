@@ -35,16 +35,13 @@ int main() {
     }
 
     int maxTime = timeA > timeB ? timeA : timeB;
-    int difference = 0;
     if (maxTime == timeA) {
-        difference = timeA - timeB;
-        while(difference--){
+        for(int i = timeB; i < timeA; i++){
             traceB[timeB + 1] = traceB[timeB];
             timeB++;
         }
     } else {
-        difference = timeB - timeA;
-        while(difference--){
+        for(int i = timeA; i < timeB; i++){
             traceA[timeA + 1] = traceA[timeA];
             timeA++;
         }    
