@@ -21,10 +21,17 @@ int main() {
     }
 
     for(int i = 0; i < actualTime; i++){
-        if(handshakes[i].first != -1 && count[handshakes[i].first] < k) {
+        if(handshakes[i].first != -1 && persons[handshakes[i].first] == 1 
+        && count[handshakes[i].first] < k) {
             persons[handshakes[i].second] = 1;
         }
+        if(handshakes[i].second != -1 && persons[handshakes[i].second] == 1
+        && count[handshakes[i].second] < k) {
+            persons[handshakes[i].first] = 1;
+        }
+        
         count[handshakes[i].first]++;
+        count[handshakes[i].second]++;
     }  
         
     for(int i = 1; i <= n; i++){
