@@ -9,18 +9,12 @@ int main() {
     int timeline[m] = {};
 
     int target;
+    int ans = -1;
     for(int sec = 0; sec < m; sec++){
         cin >> target;
         students[target]++;
         if (students[target] >= k) {
-            timeline[sec] = target;
-        }
-    }
-
-    int ans = -1;
-    for(int sec = 0; sec < m; sec++){
-        if (timeline[sec]) {
-            ans = timeline[sec];
+            ans = target;
             break;
         }
     }
