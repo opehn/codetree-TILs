@@ -22,18 +22,18 @@ int main() {
     for(int i = 0; i < t; i++){
         tie(s, x, y) = handshakes[i];
 
-        if(persons[x] == 1 && count[x] < k) {
-            persons[y] = 1;
-        } else if(persons[y] == 1 && count[y] < k) {
-            persons[x] = 1;
-        }
-
         if(persons[x]) {
             count[x]++;
         }
 
         if(persons[y]) {
             count[y]++;
+        }
+
+        if(persons[x] == 1 && count[x] <= k) {
+            persons[y] = 1;       }
+        if(persons[y] == 1 && count[y] <= k) {
+            persons[x] = 1;
         }
     }  
         
