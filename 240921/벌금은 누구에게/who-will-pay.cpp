@@ -21,6 +21,7 @@ int main() {
     for(int sec = 0; sec < m; sec++){
         if (timeline[sec]) {
             ans = timeline[sec];
+            break;
         }
     }
 
