@@ -1,8 +1,7 @@
 #include <iostream>
+#include <vector>
 using namespace std;
 
-#define MAX_LINE 1000 + 1
-#define MAX_DISTANCE 1000 * 1000 * 1000
 #define A 1
 #define B 2
 
@@ -12,37 +11,37 @@ int main() {
 
     int v, t;
     int totalTime = 0;
-    int a[MAX_LINE] = {};
-    int b[MAX_LINE] = {};
+    vector<int> a, b;
     for(int i = 1; i < n + 1; i++){
         cin >> v >> t;
         totalTime += t;
         while(t--){
-            a[i] = a[i] - 1 + v;
+            a.push_back(v);
         }
-
     }
 
     for(int i = 1; i < m + 1; i++){
         cin >> v >> t;
         while(t--){
-            b[i] = b[i] - 1 + v;
+            b.push_back(v);
         }
     }
 
-    int first;
-    int cur;
+    int prev = 0, cur = 0;
+    int posA = 0, posB = 0;
     int cnt = 0;
-    for(int i = 1;i < totalTime + 1; i++){
-        if(a[i] > b[i]){
+    for(int i = 0; i < totalTime; i++){
+        posA += a[i];
+        posB += b[i];
+        if(posA > posB){
             cur = A;
-        } else if (a[i] < b[i]){
+        } else if (posA < posB){
             cur = B;
         } else {
             cur = A + B;   
         }
-        if (first != cur) cnt++;
-        first = cur;
+        if (prev != cur) cnt++;
+        prev = cur;
     }
     cout << cnt << endl;
     return 0;
