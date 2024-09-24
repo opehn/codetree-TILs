@@ -10,7 +10,6 @@ int getdir(string dir) {
         return 2;
     if(dir == "D") 
         return 1;
-
     return -1;
 }
 
@@ -24,7 +23,7 @@ int main() {
 
     cin >> n >> t >> r >> c >> dir;
 
-    int dr[4] = {0, -1, 1, 0}, dc[4] = {1, 0, 0, -1};
+    int dr[4] = {0, 1, -1, 0}, dc[4] = {1, 0, 0, -1};
     
     int dirNum = getdir(dir);
 
