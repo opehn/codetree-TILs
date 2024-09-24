@@ -23,13 +23,15 @@ int main() {
     int res = 0;
     for(int i = 0; i < n; i++){
         for(int j = 0; j < n; j++) {
-            for(int k = 0; k < n; k++) {
+            for(int k = 0; k < 4; k++) {
                 curDx = dx[k], curDy = dy[k];
-                if (inRange(i + curDx, j + curDy, n) && arr[i + curDx][j + curDy] == 1)
+                if (inRange(i + curDx, j + curDy, n) && arr[i + curDx][j + curDy] == 1){
                     oneCnt++;
+                }
             }
-            if(oneCnt >= 3)
+            if(oneCnt >= 3) {
                 res++;
+            }
             oneCnt = 0;
         }
     }
