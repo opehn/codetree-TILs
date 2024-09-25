@@ -19,7 +19,6 @@ int main() {
     grid[0][0] = cur; 
     for(int i = 0; i < n; i++){
         for(int j = 0; j < m; j++){
-
             nr = r + dr[dir_num], nc = c + dc[dir_num];
             if(inRange(nr, nc, n, m) && grid[nr][nc] == 0) {
                 r = nr, c = nc;
@@ -29,9 +28,9 @@ int main() {
             }
             cur += 1;
             grid[r][c] = cur;
+            cnt++;
+            if (cnt == n * m - 1) break;
         }
-        cnt++;
-        if(cnt == (n * m) - 1) break;
     }
 
     for(int i = 0; i < n; i++){
