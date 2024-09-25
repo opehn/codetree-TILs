@@ -14,24 +14,14 @@ int main() {
     int grid[n][m] = {};
     int nr = 0, nc = 0, r = 0, c = 0;
     int dir_num = 0;
-    int cur = 1;
-    int cnt = 0;
-    grid[0][0] = cur; 
-    int flag = 0;
-    for(int i = 0; i < n && !flag; i++){
-        for(int j = 0; j < m && !flag; j++){
-            nr = r + dr[dir_num], nc = c + dc[dir_num];
-            if(inRange(nr, nc, n, m) && grid[nr][nc] == 0) {
-                r = nr, c = nc;
-            } else {
-                dir_num = (dir_num + 1) % 4;
-                r = r + dr[dir_num], c = c + dc[dir_num];
-            }
-            cur += 1;
-            grid[r][c] = cur;
-            cnt++;
-            if (cnt == (n * m) - 1) flag = true;
+    grid[0][0] = 1; 
+    for(int i = 2; i <= n * m; i++){
+        nr = r + dr[dir_num], nc = c + dc[dir_num];
+        if(!inRange(nr, nc, n, m) || grid[nr][nc] != 0) {
+            dir_num = (dir_num + 1) % 4;
         }
+        r = r + dr[dir_num], c = c + dc[dir_num];
+        grid[r][c] = i;
     }
 
     for(int i = 0; i < n; i++){
