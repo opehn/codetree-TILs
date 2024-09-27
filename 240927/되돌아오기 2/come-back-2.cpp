@@ -16,12 +16,12 @@ int main() {
     for(int i = 0; i < direction.length() && flag; i++){
         char curDir = direction[i];
         if(curDir == 'R'){
-            dirNum = dirNum + 1 % 4;
+            dirNum = (dirNum + 1) % 4;
             cnt++;
             continue;
         }
         if(curDir == 'L') {
-            dirNum = dirNum - 1 % 4;
+            dirNum = (dirNum + 3) % 4;
             cnt++;
             continue;
         }
