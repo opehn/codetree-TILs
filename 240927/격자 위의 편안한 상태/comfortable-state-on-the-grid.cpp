@@ -1,6 +1,9 @@
 #include <iostream>
 using namespace std;
 
+bool inRange(int r, int c, int n){
+    return (r >= 0 && r < n && c >= 0 && c < n);
+}
 int main() {
     int n, m;
     cin >> n >> m;
@@ -13,13 +16,17 @@ int main() {
     int cnt = 0;
     for(int i = 0; i < m; i++){
         cin >> r >> c;
+        r--;
+        c--;
         grid[r][c] = 1;
         for(int j = 0; j < 4; j++){
+            if (r == n - 1 || c == n - 1)
+                continue;
             aroundR = r + dr[j], aroundC = c + dc[j];
             if(grid[aroundR][aroundC] == 1)
                 cnt++;
         }
-        if(cnt >=3) {
+        if(cnt == 3) {
             cout << 1 << endl;
         } else {
             cout << 0 << endl;
