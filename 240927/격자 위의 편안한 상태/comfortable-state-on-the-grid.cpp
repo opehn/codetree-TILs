@@ -20,10 +20,8 @@ int main() {
         c--;
         grid[r][c] = 1;
         for(int j = 0; j < 4; j++){
-            if (r == n - 1 || c == n - 1)
-                continue;
             aroundR = r + dr[j], aroundC = c + dc[j];
-            if(grid[aroundR][aroundC] == 1)
+            if(inRange(r, c, n) && grid[aroundR][aroundC] == 1)
                 cnt++;
         }
         if(cnt == 3) {
