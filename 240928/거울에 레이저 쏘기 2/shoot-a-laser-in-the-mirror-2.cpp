@@ -16,7 +16,7 @@ void getFirstPosition(int k, int n){
         r = n - 1;
         c = n - (k - (n * 2));
     } else {
-        dir = 3;
+        dir = 1;
         r = n - (k - (n * 3));
         c = 0;
     }
