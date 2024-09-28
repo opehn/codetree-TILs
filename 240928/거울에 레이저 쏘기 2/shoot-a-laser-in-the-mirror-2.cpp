@@ -50,14 +50,13 @@ int main() {
     int cnt = 0;    
     while(inRange(r, c, n)) {
         cnt++;
-        r += dr[dir];
-        c += dc[dir];
-        if (!inRange(r, c, n)) break;
         if (grid[r][c] == '\\') {
             dir += backSlash[dir];
         } else {
             dir += slash[dir];
         }
+        r += dr[dir];
+        c += dc[dir];
     }
 
     cout << cnt << endl;
