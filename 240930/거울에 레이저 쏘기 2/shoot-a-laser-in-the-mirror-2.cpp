@@ -1,6 +1,7 @@
 #include <iostream>
 using namespace std;
 
+#define MAX_N 1000
 int r, c, dir;
 void getFirstPosition(int k, int n){
     if(k <= n) {
@@ -35,7 +36,7 @@ int main() {
     int slash[4] = {1, -1, 1, -1};
     int backSlash[4] = {-1, 1, -1, 1};
 
-    char grid[n][n] = {};
+    char grid[MAX_N][MAX_N] = {};
     string slashes;
     for(int i = 0; i < n; i++) {
         cin >> slashes;
