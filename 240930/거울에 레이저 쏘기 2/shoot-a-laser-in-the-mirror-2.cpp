@@ -2,7 +2,6 @@
 using namespace std;
 
 #define MAX_N 1000
-#define inRange(r, c, n) (r >= 0 && r < n && c >= 0 && c < n)
 
 int r, c, dir;
 void getFirstPosition(int k, int n){
@@ -23,6 +22,10 @@ void getFirstPosition(int k, int n){
         r = n - (k - (n * 3));
         c = 0;
     }
+}
+
+bool inRange(int r, int c, int n) {
+    return (r >= 0 && r < n && c >= 0 && c < n);
 }
 
 int main() {
