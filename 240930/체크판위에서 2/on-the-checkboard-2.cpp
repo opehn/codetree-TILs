@@ -19,10 +19,10 @@ int main() {
             for(int k = i + 1; k < n; k++) {
                 for(int l = 0; l < n - 1; l++) {
                     sum = (arr[i][j] + arr[i][j + 1]) + (arr[k][l] + arr[k][l + 1]);
+                    max = sum > max ? sum : max;
                 }
             }
-            max = sum > max ? sum : max;
-            sum = 0;
+
         }
     }
     cout << max << endl;
