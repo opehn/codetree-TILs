@@ -58,7 +58,6 @@ int main() {
         r += dr[dir];
         c += dc[dir];
         cnt++;
-        if (!inRange(r, c, n)) break;
     }
 
     cout << cnt << endl;
