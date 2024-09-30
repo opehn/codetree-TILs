@@ -30,8 +30,8 @@ int main() {
     int n, k;
     cin >> n;
 
-    int dr[4] = { 0, 1, 0, -1};
-    int dc[4] = { -1, 0, 1, 0};
+    int dr[4] = { -1, 0, 1, 0};
+    int dc[4] = { 0, 1, 0, -1};
     int slash[4] = {1, -1, 1, -1};
     int backSlash[4] = {-1, 1, -1, 1};
 
@@ -49,15 +49,15 @@ int main() {
 
     int cnt = 0;    
     while(inRange(r, c, n)) {
-        r += dr[dir];
-        c += dc[dir];
-        if (!inRange(r, c, n)) break;
         if (grid[r][c] == '\\') {
             dir += backSlash[dir];
         } else {
             dir += slash[dir];
         }
+        r += dr[dir];
+        c += dc[dir];
         cnt++;
+        if (!inRange(r, c, n)) break;
     }
 
     cout << cnt << endl;
