@@ -20,8 +20,7 @@ int main() {
     for(int i = 0; i < n; i++){
         start = i;
         for(int j = 0; j < n; j++){
-            dist = j - start;
-            dist = dist < 0 ? 5 + dist : dist;
+            dist = (j - start + n) % n;
             total += rooms[j] * dist;
         }
         min = total < min ? total : min;
