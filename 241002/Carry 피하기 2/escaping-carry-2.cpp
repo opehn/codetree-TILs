@@ -6,7 +6,7 @@ using namespace std;
 bool checkCarry(int a, int b, int c){
     
     int digit1, digit2, digit3;
-    while(a && b && c) {
+    while(a || b || c) {
         digit1 = a % 10;
         digit2 = b % 10;
         digit3 = c % 10;
