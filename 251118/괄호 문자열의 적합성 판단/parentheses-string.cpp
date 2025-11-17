@@ -1,8 +1,6 @@
 #include <iostream>
 #include <stack>
 #include <string>
-#include <vector>
-#include <sstream>
 
 using namespace std;
 
@@ -17,6 +15,7 @@ int main(void) {
         if(str[i] == ')') { 
             if (st.empty()) {
                 cout << "No" << endl;
+                return;
             }
             st.pop();
         }
