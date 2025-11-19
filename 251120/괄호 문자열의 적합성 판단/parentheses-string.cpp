@@ -15,7 +15,7 @@ int main(void) {
         if(str[i] == ')') { 
             if (st.empty()) {
                 cout << "No" << endl;
-                return;
+                retunr 0;
             }
             st.pop();
         }
