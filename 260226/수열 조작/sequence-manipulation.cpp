@@ -5,26 +5,20 @@ using namespace std;
 
 int main() {
     deque<int> dq;
-    vector<int> numVector;
-    
 
     int n;
     cin >> n;
 
     for(int i = 1; i <= n; i++) { 
-        numVector.push_back(i);
+        dq.push_back(i);
     }
 
-    auto front = numVector.begin();
-    while(numVector.size() != 1) { 
-        front = numVector.begin();
-        numVector.erase(front);
-        front = numVector.begin();
-        numVector.push_back(*front);
-        numVector.erase(front);
+    while(dq.size() != 1) { 
+        dq.pop_front();
+        dq.push_back(dq.front());
+        dq.pop_front();
     }
 
-    cout << numVector[0];
-
+    cout << dq.front();
     return 0;
 }
